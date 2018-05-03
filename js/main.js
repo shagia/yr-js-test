@@ -17,12 +17,20 @@ var q2b2State = false;
 var q2b3State = false;
 var q2Status = 0;
 
+//Q3
+
+
+
 //Final solutions
 var q1Solution = [];
+var q2Solution = [];
+var q3Solution = [];
 
 //Each question has a list of responses
 //Keep track of responses
 //Dictionary of content and possible keywords??
+
+//screen should function like 1 to 2 to 3
 
 /*$(document).ready(function() {
 	if(q1Status == 2){
@@ -30,11 +38,18 @@ var q1Solution = [];
 	};
 });*/
 
+//Structure
+$( document ).ready(function() {
+    $("#Q2").hide();
+    $("#Q3").hide();
+});
+
+
 
 //Q1 statements
 $("#q1b1").click(function() {
 
-	if(q1b1State == false && q1Status < 2) {
+	if(q1b1State == false && q1Status < 1) {
 		q1b1State = true;
 		q1Status = q1Status + 1;
 		$(this).addClass('active');
@@ -58,7 +73,7 @@ $("#q1b1").click(function() {
 });
 
 $("#q1b2").click(function() {
-	if(q1b2State == false && q1Status < 2) {
+	if(q1b2State == false && q1Status < 1) {
 		q1b2State = true;
 		q1Status = q1Status + 1;
 
@@ -78,7 +93,7 @@ $("#q1b2").click(function() {
 	}
 });
 $("#q1b3").click(function() {
-	if(q1b3State == false && q1Status < 2) {
+	if(q1b3State == false && q1Status < 1) {
 		q1b3State = true;
 		q1Status = q1Status + 1;
 		$(this).addClass('active');
@@ -98,7 +113,7 @@ $("#q1b3").click(function() {
 	}
 });
 $("#q1b4").click(function() {
-	if(q1b4State == false && q1Status < 2) {
+	if(q1b4State == false && q1Status < 1) {
 		q1b4State = true;
 		q1Status = q1Status + 1;
 		$(this).addClass('active');
@@ -120,7 +135,13 @@ $("#q1b4").click(function() {
 
 $("#q1NP").click(function() {
 	if ($(".active") [0]){
-		console.log('test');
+		console.log(q1Solution);
+		//$(".q1Answers").html(q1Solution);
+		$("#aDebug").text("Q1 =" + q1Solution);
+
+		$("#Q1").hide();
+		$("#Q2").show();
+
 	}
 	else {
 		console.log("You must select at least one option!");
@@ -134,6 +155,11 @@ $("#q2b1").click(function() {
 		q2b1State = true;
 		q2Status = q2Status + 1;
 		$(this).addClass('active');
+
+		var buttonContent = $(event.target).text();
+		q2Solution.push(buttonContent);
+		console.log(buttonContent);
+
 		console.log(this + ' ' + q2b1State + ', ' + q2Status);
 	}
 
@@ -154,6 +180,12 @@ $("#q2b2").click(function() {
 		q2b2State = true;
 		q2Status = q2Status + 1;
 		$(this).addClass('active');
+
+		var buttonContent = $(event.target).text();
+		q2Solution.push(buttonContent);
+		console.log(buttonContent);
+
+
 		console.log(this + ' ' + q2b2State + ', ' + q2Status);
 	}
 
@@ -174,6 +206,12 @@ $("#q2b3").click(function() {
 		q2b3State = true;
 		q2Status = q2Status + 1;
 		$(this).addClass('active');
+
+		var buttonContent = $(event.target).text();
+		q2Solution.push(buttonContent);
+		console.log(buttonContent);
+
+
 		console.log(this + ' ' + q2b3State + ', ' + q2Status);
 	}
 
@@ -188,44 +226,218 @@ $("#q2b3").click(function() {
 
 });
 
+$("#q2NP").click(function() {
+
+	if ($(".active") [0]){
+		console.log(q2Solution);
+		//$(".q2Answers").html(q2Solution);
+		$("#aDebug").text("Q2 =" + q2Solution);
+
+		$("#Q2").hide();
+		$("#Q3").show();
+	}
+	else {
+		console.log("You must select at least one option!");
+	}
+
+});
+
 //Big boxes, jesus
 
+//Row 1
+
+
 $("#box1").click(function() {
-$(this).addClass('active-box');
+
+	if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
 
 });
 $("#box2").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box3").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box4").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
+
+//Row 2
+
 $("#box5").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box6").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box7").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box8").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
+
+//Row 3
+
 $("#box9").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box10").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box11").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
 });
 $("#box12").click(function() {
-$(this).addClass('active-box');
+
+if ($(this).hasClass('active-box')) {
+
+		$(this).removeClass('active-box');
+
+	}
+	else {
+		$(this).addClass('active-box');
+		var buttonContent = $(event.target).text();
+		q3Solution.push(buttonContent);
+		console.log(buttonContent);
+	};
+
+});
+
+$("#q3NP").click(function() {
+
+	$("#aDebug").text("Q3 =" + q3Solution);
+
 });
 
 
