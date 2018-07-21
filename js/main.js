@@ -1,8 +1,10 @@
+//Structure initializing
+$( document ).ready(function() {
+    $("#Q2").hide();
+    $("#Q3").hide();
+});
+
 //Initializing button statements, is there a better way to do this?
-
-//On the first set of buttons, only let one be clicked
-
-//
 
 //Q1
 var q1b1State = false;
@@ -19,8 +21,6 @@ var q2Status = 0;
 
 //Q3
 
-
-
 //Final solutions
 var q1Solution = [];
 var q2Solution = [];
@@ -31,18 +31,15 @@ var q3Solution = [];
 //Dictionary of content and possible keywords??
 
 //screen should function like 1 to 2 to 3
+//Check if active sits in an element instead, if it does, add it's number to the solution array
+
+
 
 /*$(document).ready(function() {
 	if(q1Status == 2){
 		$("#q1-error").show();
 	};
 });*/
-
-//Structure
-$( document ).ready(function() {
-    $("#Q2").hide();
-    $("#Q3").hide();
-});
 
 
 
@@ -63,12 +60,12 @@ $("#q1b1").click(function() {
 	}
 
 	else if (q1b1State == true) {
-		q1b1State = false;		
+		/* q1b1State = false;		
 		$(this).removeClass('active');
 		q1Status = q1Status - 1;
 		q1Solution.splice(1, buttonContent);
 		console.log(q1Solution);
-		console.log(this + ' ' + q1b1State + ', ' + q1Status);
+		console.log(this + ' ' + q1b1State + ', ' + q1Status);*/
 	}
 });
 
@@ -86,10 +83,10 @@ $("#q1b2").click(function() {
 	}
 
 	else if (q1b2State == true) {
-		q1b2State = false;
+		/*q1b2State = false;
 		q1Status = q1Status - 1;	
 		$(this).removeClass('active');
-		console.log(this + ' ' + q1b2State + ', ' + q1Status);
+		console.log(this + ' ' + q1b2State + ', ' + q1Status);*/
 	}
 });
 $("#q1b3").click(function() {
@@ -106,10 +103,10 @@ $("#q1b3").click(function() {
 	}
 
 	else if (q1b3State == true) {
-		q1b3State = false;
+		/*q1b3State = false;
 		q1Status = q1Status - 1;		
 		$(this).removeClass('active');
-		console.log(this + ' ' + q1b3State + ', ' + q1Status);
+		console.log(this + ' ' + q1b3State + ', ' + q1Status);*/
 	}
 });
 $("#q1b4").click(function() {
@@ -126,21 +123,32 @@ $("#q1b4").click(function() {
 	}
 
 	else if (q1b4State == true) {
-		q1b4State = false;
+		/*q1b4State = false;
 		q1Status = q1Status - 1;		
 		$(this).removeClass('active');
-		console.log(this + ' ' + q1b4State + ', ' + q1Status);
+		console.log(this + ' ' + q1b4State + ', ' + q1Status);*/
 	}
 });
 
+$("#q1b1, #q1b2, #q1b3, #q1b4").click(function() {
+	$("#aDebug").text("Q1 =" + q1Solution);
+		$("#Q2").show();
+});
+
+
+
 $("#q1NP").click(function() {
+
+	/* var buttonContentt = $("#Q1").find(".active");
+	console.log(buttonContentt);
+	$("#Q2").show();*/
+
+
+
 	if ($(".active") [0]){
 		console.log(q1Solution);
 		//$(".q1Answers").html(q1Solution);
-		$("#aDebug").text("Q1 =" + q1Solution);
-
-		$("#Q1").hide();
-		$("#Q2").show();
+		
 
 	}
 	else {
@@ -163,12 +171,12 @@ $("#q2b1").click(function() {
 		console.log(this + ' ' + q2b1State + ', ' + q2Status);
 	}
 
-	else if (q2b1State == true) {
+	/*else if (q2b1State == true) {
 		q2b1State = false;		
 		$(this).removeClass('active');
 		q2Status = q2Status - 1;
 		console.log(this + ' ' + q2b1State + ', ' + q2Status);
-	}
+	}*/
 
 
 
@@ -189,12 +197,12 @@ $("#q2b2").click(function() {
 		console.log(this + ' ' + q2b2State + ', ' + q2Status);
 	}
 
-	else if (q2b2State == true) {
+	/*else if (q2b2State == true) {
 		q2b2State = false;		
 		$(this).removeClass('active');
 		q2Status = q2Status - 1;
 		console.log(this + ' ' + q2b2State + ', ' + q2Status);
-	}
+	}*/
 
 
 
@@ -215,25 +223,45 @@ $("#q2b3").click(function() {
 		console.log(this + ' ' + q2b3State + ', ' + q2Status);
 	}
 
-	else if (q2b3State == true) {
+	/*else if (q2b3State == true) {
 		q2b3State = false;		
 		$(this).removeClass('active');
 		q2Status = q2Status - 1;
 		console.log(this + ' ' + q2b3State + ', ' + q2Status);
-	}
+	}*/
 
 
 
 });
 
+$("#q2b1, #q2b2, #q2b3, #q2b4").click(function() {
+
+	if(q2Status == 2) {
+		$("#aDebug").text("Q2 =" + q2Solution);
+		$("#Q3").show();
+		
+	}
+
+
+	
+});
+
 $("#q2NP").click(function() {
+
+	var buttonContentt = $("#Q2").find(".active");
+	/*$.each(buttonContentt, function(index, value) {
+
+		console.log(value);
+		return (value !== text);
+
+	});
+	//console.log(buttonContentt.text); */
 
 	if ($(".active") [0]){
 		console.log(q2Solution);
 		//$(".q2Answers").html(q2Solution);
 		$("#aDebug").text("Q2 =" + q2Solution);
 
-		$("#Q2").hide();
 		$("#Q3").show();
 	}
 	else {
